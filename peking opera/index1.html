@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/index1.css" />
+</head>
+
+<body>
+    <video id="v1" autoplay loop muted>
+        <source src="video/1602207624.mp4" type="video/mp4"  />
+  </video>
+    <div class="player unsound" id="p1"></div>
+    <div class="player sound" id="p2"></div>
+    <div class="sy">
+        <p><a href="home-page/index.html">进 入 首 页</a></p>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+    (function() {
+        let close = document.getElementById("p1");
+        let open = document.getElementById("p2");
+        let m = document.querySelector("#v1");
+        let c = function() {
+            m.muted = false;
+            close.style.display = "none";
+            open.style.display = "block";
+        }
+        close.addEventListener("click", c, false);
+
+        let o = function() {
+            m.muted = true;
+            close.style.display = "block";
+            open.style.display = "none";
+        }
+        open.addEventListener("click", o, false);
+    })();
+</script>
